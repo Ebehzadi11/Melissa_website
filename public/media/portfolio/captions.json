@@ -1,0 +1,48 @@
+{
+  "_README": "Optional. For each portfolio image, add an entry keyed by its filename. 'alt' improves accessibility + SEO (screen readers, Google Images). 'objectPosition' nudges the crop focus (e.g. 'center 20%' shifts the visible area up). Any image without an entry still works with a sensible default. After adding photos or editing this file, run: npm run portfolio",
+  "01-beauty-flowers.jpg": {
+    "alt": { "pt": "Melissa Oliveira em retrato de beleza, deitada em um jardim de margaridas amarelas, cabelos ruivos cacheados", "en": "Melissa Oliveira in a beauty portrait, lying in a bed of yellow daisies, red curly hair" }
+  },
+  "02-olive-editorial.jpg": {
+    "alt": { "pt": "Melissa Oliveira em pose editorial agachada, macacão verde militar, batom vermelho, fundo neutro", "en": "Melissa Oliveira in a crouched editorial pose, olive-green jumpsuit, red lip, neutral backdrop" }
+  },
+  "03-blue-studio-curls.jpg": {
+    "alt": { "pt": "Melissa Oliveira em estúdio com fundo azul, camisa translúcida estampada, brincando com os cachos ruivos", "en": "Melissa Oliveira in studio on a blue backdrop, sheer printed shirt, playing with her red curls" }
+  },
+  "04-natural-ugc-selfie.jpg": {
+    "alt": { "pt": "Melissa Oliveira em retrato natural e espontâneo, luz do dia, cabelos cacheados — estilo UGC", "en": "Melissa Oliveira in a natural, candid daylight portrait, curly hair — UGC style" }
+  },
+  "05-olive-crouch.jpg": {
+    "alt": { "pt": "Melissa Oliveira em pose editorial, macacão verde militar, olhar direto para a câmera, fundo neutro", "en": "Melissa Oliveira in an editorial pose, olive-green jumpsuit, looking straight at the camera, neutral backdrop" }
+  },
+  "06-blue-studio-poised.jpg": {
+    "alt": { "pt": "Melissa Oliveira em estúdio com fundo azul, mãos entrelaçadas junto ao rosto, expressão serena", "en": "Melissa Oliveira in studio on a blue backdrop, hands clasped near her face, serene expression" }
+  },
+  "07-studio-beauty-portrait.jpg": {
+    "alt": { "pt": "Melissa Oliveira em retrato de beleza em estúdio, top preto, mão ao rosto, batom vermelho", "en": "Melissa Oliveira in a studio beauty portrait, black top, hand to face, red lip" }
+  },
+  "08-street-denim-glasses.jpg": {
+    "alt": { "pt": "Melissa Oliveira em ensaio lifestyle ao ar livre, jaqueta jeans, top de renda e óculos, sentada em um banco", "en": "Melissa Oliveira in an outdoor lifestyle shoot, denim jacket, lace top and tinted glasses, seated on a bench" }
+  },
+  "09-blue-studio-smile.jpg": {
+    "alt": { "pt": "Melissa Oliveira sorrindo em estúdio com fundo azul, camisa translúcida sobre top branco", "en": "Melissa Oliveira smiling in studio on a blue backdrop, sheer shirt over a white top" }
+  },
+  "10-blue-studio-halter.jpg": {
+    "alt": { "pt": "Melissa Oliveira em estúdio com fundo azul, top frente-única preto e shorts jeans, mão na cintura", "en": "Melissa Oliveira in studio on a blue backdrop, black halter top and denim shorts, hand on hip" }
+  },
+  "11-sunlit-denim-wall.jpg": {
+    "alt": { "pt": "Melissa Oliveira em ensaio ao ar livre sob luz do sol, jaqueta jeans e top de renda, braço erguido junto à parede", "en": "Melissa Oliveira in a sunlit outdoor shoot, denim jacket and lace top, arm raised against a wall" }
+  },
+  "12-blue-studio-joy.jpg": {
+    "alt": { "pt": "Melissa Oliveira sorrindo espontaneamente em estúdio com fundo azul, brincando com os cachos", "en": "Melissa Oliveira laughing candidly in studio on a blue backdrop, playing with her curls" }
+  },
+  "13-blue-studio-halter-full.jpg": {
+    "alt": { "pt": "Melissa Oliveira em corpo inteiro em estúdio com fundo azul, top frente-única preto e shorts jeans", "en": "Melissa Oliveira full-body in studio on a blue backdrop, black halter top and denim shorts" }
+  },
+  "14-wood-floor-editorial.jpg": {
+    "alt": { "pt": "Melissa Oliveira em pose editorial sobre piso de madeira, jaqueta jeans e top de renda, olhando para a câmera", "en": "Melissa Oliveira in an editorial pose on a wooden floor, denim jacket and lace top, looking up at the camera" }
+  },
+  "15-blue-studio-serene.jpg": {
+    "alt": { "pt": "Melissa Oliveira em estúdio com fundo azul, camisa translúcida sobre top branco, expressão serena", "en": "Melissa Oliveira in studio on a blue backdrop, sheer shirt over a white top, serene expression" }
+  }
+}

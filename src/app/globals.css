@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+/* ========================================================================
+   Melissa Oliveira — design tokens (ported from the original art direction)
+   ======================================================================== */
+@theme {
+  /* palette */
+  --color-offwhite: #f7f5f1;
+  --color-ink: #171717;
+  --color-taupe: #b8aea3;
+  --color-champagne: #c9b79c;
+  --color-petrol: #1b4965;
+  --color-inksoft: #4b4640;
+  --color-stone: #6b645a;
+  --color-mist: #edebe6;
+
+  /* type */
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+
+  /* motion */
+  --ease-editorial: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* layout */
+  --spacing-wrap: 1180px;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-offwhite);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: var(--color-petrol);
+  color: var(--color-offwhite);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-petrol);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* Lenis smooth-scroll wiring */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- faint shooting stars (hero background) ---------- */
+.shooting-star {
+  position: absolute;
+  height: 2px;
+  border-radius: 9999px;
+  /* bright champagne head, fading petrol tail (petrol reads better on the light bg) */
+  background: linear-gradient(
+    90deg,
+    rgba(27, 73, 101, 0) 0%,
+    rgba(27, 73, 101, 0.5) 62%,
+    rgba(201, 183, 156, 0.95) 100%
+  );
+  opacity: 0;
+  transform: translate3d(0, 0, 0) rotate(23deg);
+  animation-name: shooting-star;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+.shooting-star::after {
+  /* soft glow at the head */
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(201, 183, 156, 0.9);
+  transform: translateY(-50%);
+  box-shadow: 0 0 6px 1px rgba(201, 183, 156, 0.5);
+}
+@keyframes shooting-star {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(23deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate3d(62vw, 26vw, 0) rotate(23deg);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shooting-star {
+    display: none;
+  }
+}
+
+/* ---------- concentric ripples (Manifesto background) ---------- */
+.ripple {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(181, 139, 92, 0.8);
+  opacity: 0;
+  transform: scale(0.35);
+  animation: ripple-expand 7.6s ease-out infinite;
+  will-change: transform, opacity;
+}
+@keyframes ripple-expand {
+  0% {
+    transform: scale(0.35);
+    opacity: 0;
+  }
+  16% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.3);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ripple {
+    animation: none;
+    opacity: 0.4;
+  }
+  .ripple:nth-child(1) {
+    transform: scale(0.55);
+  }
+  .ripple:nth-child(2) {
+    transform: scale(0.95);
+  }
+  .ripple:nth-child(3) {
+    transform: scale(1.4);
+  }
+  .ripple:nth-child(4) {
+    transform: scale(1.9);
+  }
+}
+
+/* ---------- floating dandelion seeds (About background) ---------- */
+.dandelion {
+  position: absolute;
+  top: 0;
+  color: rgba(133, 120, 102, 0.9); /* warm taupe — reads on the light bg */
+  opacity: 0;
+  animation-name: dandelion-fall;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+@keyframes dandelion-fall {
+  0% {
+    transform: translate(0, -30px) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: var(--dandelion-opacity, 0.85);
+  }
+  25% {
+    transform: translate(28px, 150px) rotate(45deg);
+  }
+  50% {
+    transform: translate(-16px, 320px) rotate(-35deg);
+  }
+  75% {
+    transform: translate(22px, 490px) rotate(55deg);
+  }
+  92% {
+    opacity: var(--dandelion-opacity, 0.85);
+  }
+  100% {
+    transform: translate(-10px, 660px) rotate(-25deg);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dandelion {
+    display: none;
+  }
+}
+
+/* outlined (stroke-only) type — editorial marquee accent */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-ink);
+}
+
+/* very slow rotation for the lens/aperture motif */
+.spin-slow {
+  animation: spin-slow 60s linear infinite;
+}
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spin-slow {
+    animation: none;
+  }
+}
+
+/* editorial eyebrow label */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-petrol);
+  font-weight: 500;
+}
